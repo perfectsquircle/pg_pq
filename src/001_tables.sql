@@ -8,7 +8,7 @@ CREATE TABLE mq.exchange (
 CREATE TABLE mq.message_intake (
     exchange_id int NOT NULL REFERENCES mq.exchange(exchange_id) ON DELETE CASCADE,
     routing_key text NOT NULL,
-    body json NOT NULL,
+    body jsonb NOT NULL,
     headers hstore NOT NULL DEFAULT '',
     publish_time timestamptz NOT NULL DEFAULT now()
 );
